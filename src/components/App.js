@@ -1,7 +1,8 @@
 import './App.css';
 import { Component } from 'react';
-import firebase from 'firebase';
+import firebase from "firebase/compat/app"
 import data from '../data.json'
+import Grid from './Grid';
 
 class App extends Component{
   constructor(props){
@@ -21,20 +22,17 @@ class App extends Component{
   }
   render(){
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <div className="navbar-fixed">
+          <nav className="blue lighten-2">
+            <div className="nav-wrapper">
+              <a href="/" className="brand-logo center">Contacts</a>
+            </div>
+          </nav>
+        </div>
+        <div>
+          <Grid items={this.state.data}/>
+        </div>
       </div>
     );
   }
