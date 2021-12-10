@@ -1,9 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
-import firebase from 'firebase'
+import firebase from 'firebase';
+import data from '../data.json'
 
 class App extends Component{
+  constructor(props){
+    super(props);
+    this.state={data}
+  }
   componentWillMount(){
     firebase.initializeApp({
       apiKey: "AIzaSyCey_v71gUqwxbC6Mb47-ZdB6tPHHgxwRQ",
@@ -19,7 +23,6 @@ class App extends Component{
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
