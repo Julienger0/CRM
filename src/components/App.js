@@ -3,6 +3,7 @@ import { Component } from 'react';
 import firebase from "firebase/compat/app"
 import data from '../data.json'
 import Grid from './Grid';
+import Form from './Form';
 
 class App extends Component{
   constructor(props){
@@ -31,6 +32,7 @@ class App extends Component{
           </nav>
         </div>
         <div>
+          <Form/>
           <Grid items={this.state.data}/>
         </div>
       </div>
